@@ -1,8 +1,12 @@
-/**/
+/*CSS - Text font*/
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
-/**/
+/*CSS - Variables*/
 :root {
+  --width-max-size: 920px;
+  --width-min-size: calc(var(--width-max-size) * 0.598);
+  --height-size: calc(var(--width-max-size) * 0.543);
+
   --first-color-background: hsl(31, 77%, 52%);
   --second-color-background: hsl(184, 100%, 22%);
   --third-color-background: hsl(179, 100%, 13%);
@@ -10,7 +14,7 @@
   --text-color: hsla(0, 0%, 100%, 0.75);
   --color-background-page: hsl(0, 0%, 95%);
 }
-/**/
+/*CSS - Normalize*/
 *,
 *::before,
 *::after {
@@ -18,35 +22,35 @@
   padding: 0;
   box-sizing: border-box;
 }
-/**/
-body {
-  background-color: var(--color-background-page);
-  font-size: 15px;
-  padding: 0 5vh;
-  padding-top: 15vh;
-}
-/**/
+/*CSS - Reusable code*/
 .flex-center-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
 }
-/**/
+/**CSS - Container component**/
+body {
+  background-color: var(--color-background-page);
+  font-size: calc(var(--width-max-size) * 0.0163);
+  padding: 0 5vh;
+  padding-top: 15vh;
+}
+/**CSS - Container component**/
 .columns-card {
   position: relative;
   /*--*/
   display: flex;
   /*--*/
-  max-width: 920px;
-  min-width: 550px;
-  height: 500px;
+  max-width: var(--width-max-size);
+  min-width: var(--width-min-size);
+  height: var(--height-size);
   /*--*/
   margin: auto;
   /*--*/
   border-radius: 10px;
 }
-/****/
+/**independent block**/
 .preview-column {
   /*--flex-center-column*/
   justify-content: flex-start;
@@ -67,6 +71,7 @@ body {
   background-color: var(--third-color-background);
 }
 .preview-column__image {
+  width: 64px calc(var(--width-max-size) * 0.0695);
   transition-duration: 0.5s;
 }
 .preview-column__image:hover {
@@ -77,7 +82,7 @@ body {
   /*--*/
   font-family: "Big Shoulders Display", cursive;
   font-weight: 700;
-  font-size: 36px;
+  font-size: calc(var(--width-max-size) * 0.0391);
   /*--*/
   margin: 10% 0;
   /*--*/
@@ -102,16 +107,17 @@ body {
   padding: 5% 10%;
   /*--*/
   border: 2px solid var(--color-background-page);
-  border-radius: 20px;
+  border-radius: 50px;
   /*--*/
   font-family: "Lexend Deca", sans-serif;
-  font-size: 400;
+  font-weight: 400;
   /*--*/
   transition-duration: 0.4s;
 }
 .preview-column__link:hover {
   background-color: var(--color-background-page);
   color: var(--first-color-background);
+  transform: scale(1.2);
 }
 .two-link:hover {
   color: var(--second-color-background);
@@ -120,21 +126,26 @@ body {
   color: var(--third-color-background);
 }
 
+/*CSS - Changes for the adaptation responsive*/
 @media screen and (max-width: 800px) {
-  /**/
   .preview-column {
     padding-top: 10%;
   }
   .preview-column__text {
-    font-size: 13px;
+    font-size: calc(var(--width-max-size) * 0.0141);
     text-align: center;
   }
   .preview-column {
     align-items: center;
   }
 }
-
+/*CSS - Changes for the adaptation of the mobile*/
 @media screen and (max-width: 400px) {
+  :root {
+    --width-max-size: 920px;
+    --width-min-size: calc(var(--width-max-size) * 0.598);
+    --height-size: calc(var(--width-max-size) * 0.543);
+  }
   body {
     padding: 0;
     padding-top: 10vh;
@@ -169,12 +180,12 @@ body {
   .preview-column__tittle {
     margin: 15% 0;
     /*--*/
-    font-size: 30px;
+    font-size: calc(var(--width-max-size) * 0.0347);
   }
   .preview-column__text {
     width: 100%;
     /*--*/
-    font-size: 15px;
+    font-size: calc(var(--width-max-size) * 0.0163);
     text-align: left;
     /*--*/
     margin-bottom: 10%;
@@ -184,8 +195,6 @@ body {
     color: var(--first-color-background);
     /*--*/
     margin-bottom: 20%;
-    /*--*/
-    border-radius: 50px;
   }
   .two-link {
     color: var(--second-color-background);
