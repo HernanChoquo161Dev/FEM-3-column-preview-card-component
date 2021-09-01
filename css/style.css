@@ -41,6 +41,8 @@ body {
   position: relative;
   /*--*/
   display: flex;
+  /**/
+  max-width: 920px;
   /*--*/
   margin: auto;
   /*--*/
@@ -174,7 +176,7 @@ body {
     flex-direction: column;
     /**/
     max-width: 90%;
-    min-width: 340px;
+    min-width: 260px;
     height: auto;
   }
   .preview-column {
