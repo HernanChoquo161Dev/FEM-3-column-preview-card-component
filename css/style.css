@@ -1,0 +1,196 @@
+/**/
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
+/**/
+:root {
+  --first-color-background: hsl(31, 77%, 52%);
+  --second-color-background: hsl(184, 100%, 22%);
+  --third-color-background: hsl(179, 100%, 13%);
+
+  --text-color: hsla(0, 0%, 100%, 0.75);
+  --color-background-page: hsl(0, 0%, 95%);
+}
+/**/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/**/
+body {
+  background-color: var(--color-background-page);
+  font-size: 15px;
+  padding: 0 5vh;
+  padding-top: 15vh;
+}
+/**/
+.flex-center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+/**/
+.columns-card {
+  position: relative;
+  /*--*/
+  display: flex;
+  /*--*/
+  max-width: 920px;
+  min-width: 550px;
+  height: 500px;
+  /*--*/
+  margin: auto;
+  /*--*/
+  border-radius: 10px;
+}
+/****/
+.preview-column {
+  /*--flex-center-column*/
+  justify-content: flex-start;
+  /*--*/
+  background-color: var(--first-color-background);
+  /*--*/
+  padding: 0 5%;
+  padding-top: 5%;
+  /*--*/
+  border-radius: 10px 0 0 10px;
+}
+.preview-column:nth-child(2) {
+  background-color: var(--second-color-background);
+  border-radius: 0;
+}
+.preview-column:nth-child(3) {
+  border-radius: 0 10px 10px 0;
+  background-color: var(--third-color-background);
+}
+.preview-column__image {
+  transition-duration: 0.5s;
+}
+.preview-column__image:hover {
+  transform: scale(1.4);
+}
+.preview-column__tittle {
+  color: var(--color-background-page);
+  /*--*/
+  font-family: "Big Shoulders Display", cursive;
+  font-weight: 700;
+  font-size: 36px;
+  /*--*/
+  margin: 10% 0;
+  /*--*/
+  transition-duration: 0.5s;
+}
+.preview-column__tittle:hover {
+  transform: rotate(360deg);
+}
+.preview-column__text {
+  flex-basis: 50%;
+  color: var(--text-color);
+  /*--*/
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  line-height: 2;
+}
+.preview-column__link {
+  /*--*/
+  color: var(--text-color);
+  text-decoration: none;
+  /*--*/
+  padding: 5% 10%;
+  /*--*/
+  border: 2px solid var(--color-background-page);
+  border-radius: 20px;
+  /*--*/
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 400;
+  /*--*/
+  transition-duration: 0.4s;
+}
+.preview-column__link:hover {
+  background-color: var(--color-background-page);
+  color: var(--first-color-background);
+}
+.two-link:hover {
+  color: var(--second-color-background);
+}
+.three-link:hover {
+  color: var(--third-color-background);
+}
+
+@media screen and (max-width: 800px) {
+  /**/
+  .preview-column {
+    padding-top: 10%;
+  }
+  .preview-column__text {
+    font-size: 13px;
+    text-align: center;
+  }
+  .preview-column {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    padding: 0;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+  }
+  .columns-card {
+    flex-direction: column;
+    /**/
+    max-width: 90%;
+    min-width: 340px;
+    min-width: 0;
+    height: auto;
+  }
+  .preview-column {
+    /*--flex-center-column*/
+    align-items: flex-start;
+    /*--*/
+    padding: 0 15%;
+    padding-top: 15%;
+    /*--*/
+    border-radius: 10px 10px 0 0;
+  }
+  .preview-column:nth-child(2) {
+    border-radius: 0;
+  }
+  .preview-column:nth-child(3) {
+    border-radius: 0 0 10px 10px;
+  }
+  .preview-column__image {
+    width: 28%;
+  }
+  .preview-column__tittle {
+    margin: 15% 0;
+    /*--*/
+    font-size: 30px;
+  }
+  .preview-column__text {
+    width: 100%;
+    /*--*/
+    font-size: 15px;
+    text-align: left;
+    /*--*/
+    margin-bottom: 10%;
+  }
+  .preview-column__link {
+    background-color: var(--color-background-page);
+    color: var(--first-color-background);
+    /*--*/
+    margin-bottom: 20%;
+    /*--*/
+    border-radius: 50px;
+  }
+  .two-link {
+    color: var(--second-color-background);
+  }
+  .three-link {
+    color: var(--third-color-background);
+  }
+}
