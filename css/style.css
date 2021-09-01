@@ -42,10 +42,6 @@ body {
   /*--*/
   display: flex;
   /*--*/
-  max-width: var(--width-max-size);
-  min-width: var(--width-min-size);
-  height: var(--height-size);
-  /*--*/
   margin: auto;
   /*--*/
   border-radius: 10px;
@@ -98,12 +94,15 @@ body {
   font-family: "Lexend Deca", sans-serif;
   font-weight: 400;
   line-height: 2;
+  /*--*/
+  margin-bottom: 30%;
 }
 .preview-column__link {
   /*--*/
   color: var(--text-color);
   text-decoration: none;
   /*--*/
+  margin-bottom: 20%;
   padding: 5% 10%;
   /*--*/
   border: 2px solid var(--color-background-page);
@@ -139,8 +138,28 @@ body {
     align-items: center;
   }
 }
+/*CSS - Changes for the adaptation responsive*/
+@media screen and (max-width: 600px) {
+  .preview-column {
+    align-items: center;
+    /*--*/
+    padding-top: 5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
+  .preview-column__text {
+    font-size: calc(var(--width-max-size) * 0.0141);
+    text-align: center;
+    /*--*/
+    margin-bottom: 10%;
+  }
+  .preview-column__link {
+    margin-top: 20%;
+    margin-bottom: 20%;
+  }
+}
 /*CSS - Changes for the adaptation of the mobile*/
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   :root {
     --width-max-size: 920px;
     --width-min-size: calc(var(--width-max-size) * 0.598);
@@ -156,7 +175,6 @@ body {
     /**/
     max-width: 90%;
     min-width: 340px;
-    min-width: 0;
     height: auto;
   }
   .preview-column {
@@ -194,6 +212,7 @@ body {
     background-color: var(--color-background-page);
     color: var(--first-color-background);
     /*--*/
+    margin-top: 0;
     margin-bottom: 20%;
   }
   .two-link {
